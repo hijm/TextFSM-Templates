@@ -1,0 +1,12 @@
+#Value PRIMARY (\S+)
+Value NODE_NAME (Partner node|Standby node)
+Value ROLE (STANDBY|ready|NSR-ready)
+
+
+Start
+  ^.*\=+ -> Parse
+
+Parse
+  #^${NODE_NAME}\*.is\s+${ROLE}\) -> Record
+  #^${NODE_NAME}\s*.is\s+in\s+${ROLE} -> Record
+  ^${NODE_NAME}.*\bi[ns]\b\s+${ROLE} -> Record

@@ -1,4 +1,3 @@
-Value ALL_TYPES (ALL TYPES)
 Value TOTAL (\S+)
 Value UP (\S+)
 Value DOWN (\S+)
